@@ -1,6 +1,7 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // scene
 const scene = new THREE.Scene();
@@ -8,6 +9,13 @@ const scene = new THREE.Scene();
 // camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.z = 3;
+
+const loader = new GLTFLoader();
+loader.load('./DamagedHelmet.gltf', (gltf)=> {
+    scene.add(gltf.scene);
+}, undefined, (error)=> {
+    console.error('error')
+})
 
 // objects
 const geometry = new THREE.BoxGeometry(1, 1, 1);
