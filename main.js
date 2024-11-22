@@ -11,15 +11,15 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 camera.position.z = 3;
 
 const loader = new GLTFLoader();
-loader.load('./DamagedHelmet.gltf', (gltf)=> {
+loader.load('./DamagedHelmet.gltf', (gltf) => {
     scene.add(gltf.scene);
-}, undefined, (error)=> {
-    console.error('error')
-})
+}, undefined, (error) => {
+    console.error('Error loading GLTF model:', error);
+});
 
 // objects
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: "red" });
+const material = new THREE.MeshBasicMaterial({ color: 'red' });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
@@ -30,8 +30,8 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 // orbit controls
-// const controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true;
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
 
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -46,10 +46,13 @@ window.addEventListener('resize', () => {
 // animation loop
 function anima() {
     window.requestAnimationFrame(anima);
-    
-    // mesh.rotation.x += 0.01;
 
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+
+    controls.update(); // Update controls if damping is enabled
     renderer.render(scene, camera);
 };
 
 anima();
+
