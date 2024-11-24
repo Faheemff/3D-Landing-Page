@@ -7,7 +7,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <canvas id="canvas"></canvas>
+  <div class="main w-full">
+    <nav class="fixed top-0 left-0 px-10 py-3 w-full flex justify-between items-center font-sans">
+      <img class=" w-[300px] mix-blend-screen fillter saturate-150 contrast-125" src="https://imgs.search.brave.com/Yl2hwsodfTlaeNyeb-Rr6AnlFJ6dGwUhxDz5ymMYEc4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wdXJl/cG5nLmNvbS9wdWJs/aWMvdXBsb2Fkcy9s/YXJnZS9wdXJlcG5n/LmNvbS1jeWJlcnB1/bmstMjA3Ny1sb2dv/bG9nb3NnYW1lLWxv/Z29nYW1lLWxvZ29z/Z2FtZXNsb2dvY3li/ZXJwdW5rLTIwNzct/MTI3MTUyODk5NjEz/MjhobGdyLnBuZw" alt="">
+      <div class="flex gsap-5 items-center">
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">Home</a>
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">Games</a>
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">News</a>
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">Community</a>
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">Store</a>
+        <a href="#" class="text-white hover:text-blue-500 transition-colors mx-4 text-[20px] font-medium [text-shadow:_0_1px_3px_rgb(59_130_246_/_50%)]">Support</a>
+      </div>
+    </nav>
+    <div class="w-full h-screen overflow-hidden">
+      <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2" src="https://imgs.search.brave.com/Yl2hwsodfTlaeNyeb-Rr6AnlFJ6dGwUhxDz5ymMYEc4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wdXJl/cG5nLmNvbS9wdWJs/aWMvdXBsb2Fkcy9s/YXJnZS9wdXJlcG5n/LmNvbS1jeWJlcnB1/bmstMjA3Ny1sb2dv/bG9nb3NnYW1lLWxv/Z29nYW1lLWxvZ29z/Z2FtZXNsb2dvY3li/ZXJwdW5rLTIwNzct/MTI3MTUyODk5NjEz/MjhobGdyLnBuZw" alt="">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-[-1] -translate-y-1/2 w-[42rem] h-[42rem] rounded-full bg-blue-600 blur-3xl mix-blend-screen"></div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="w-full h-screen bg-[#000]"></div>
+  </div>
 
 
 
